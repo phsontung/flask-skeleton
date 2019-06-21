@@ -10,11 +10,14 @@
 |Restful API|[Flask-Restful](https://flask-restful.readthedocs.io/en/latest/)||
 |Flask Caching|[Flask-caching](https://flask-caching.readthedocs.io/en/latest/)||
 |JWT Authentication|[PyJWT](https://pyjwt.readthedocs.io/en/latest/)||
+|Hash Password|[Flask-Bcrypt](https://flask-bcrypt.readthedocs.io/en/latest/)||
 [Redis|[Flask-redis](https://pypi.org/project/flask-redis/)||
 |Celery|http://flask.pocoo.org/docs/1.0/patterns/celery/||
 |AMQP| [Pika](https://www.rabbitmq.com/tutorials/tutorial-one-python.html) |Working with RabbitMQ |
 |Testing|[Pytest](https://docs.pytest.org/en/latest/)||
+|Config|||
 |Apply Middleware|||
+|uwsgi|||
 |Traefik|||
 |HTTPS/SSL|Let's Encrypt||
 |Kubernetes|||
@@ -39,7 +42,7 @@
 - Create pull requests if you can bring something cool (constructive)
 - Create issues if you feel something wrong
 
-# TODO (Should be removed)
+# TODO
 - Add Travis CI: https://travis-ci.org
 - Add code coverage: https://codecov.io
 - Add code climate: https://codeclimate.com
