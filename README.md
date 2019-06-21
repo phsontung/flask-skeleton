@@ -6,6 +6,7 @@
 |:-----|:------|:----------|
 |Database    |[Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)||
 |Database migration|[Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)||
+|Authentication|[Flask-Login](https://flask-login.readthedocs.io/en/latest/)||
 |Flask WTFForm|https://flask-wtf.readthedocs.io/en/stable/||
 |Restful API|[Flask-Restful](https://flask-restful.readthedocs.io/en/latest/)||
 |Flask Caching|[Flask-caching](https://flask-caching.readthedocs.io/en/latest/)||
@@ -33,6 +34,7 @@
 ## References
 
 - [Structure of Flask application](https://lepture.com/en/2018/structure-of-a-flask-project)
+- [Authentication and Authorization with Flask-Login](https://scotch.io/tutorials/authentication-and-authorization-with-flask-login)
 - [Cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask)
 - [Token based authentication with flask](https://realpython.com/token-based-authentication-with-flask/)
 - [Docker container for flask micro service](https://github.com/AmeyRuikar/D-Flask)
