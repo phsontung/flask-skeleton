@@ -1,0 +1,13 @@
+# Config file for automatic testing at travis-ci.org
+dist: xenial
+language: python
+env:
+- FLASK_APP=app.py FLASK_DEBUG=1
+python:
+  - 3.6
+install:
+  - pip install pipenv
+  - pipenv install --dev --system
+before_script:
+  - flake8
+script: pytest
