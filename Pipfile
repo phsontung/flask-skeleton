@@ -21,6 +21,7 @@ Flask-Caching = ">=1.0.0"
 # Environment variable parsing
 environs = "==4.2.0"
 uwsgi = "*"
+psycopg2 = "*"
 
 [dev-packages]
 # Testing
@@ -28,7 +29,6 @@ pytest = "==4.6.3"
 WebTest = "==2.0.33"
 factory-boy = "==2.12.*"
 pdbpp = "==0.10.0"
-
 # Lint and code style
 black = "==19.3b0"
 flake8 = "==3.7.7"

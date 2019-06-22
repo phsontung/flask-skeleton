@@ -6,13 +6,16 @@ services:
       context: .
       dockerfile: Application.Dockerfile
     image: flaskapp:latest
-    command: "flask run"
+    command: "flask run --host=0.0.0.0"
     volumes:
       - ./:/app
     env_file:
       - deployment/docker/Application/env/dev.env
     ports:
       - 5000:5000
+    depends_on:
+      - postgres
+      - redis
 
   mailcatcher:
     image: schickling/mailcatcher
@@ -21,7 +24,7 @@ services:
       - 1025
 
   postgres:
-    image: postgres:10
+    image: postgres:9.6
     environment:
       POSTGRES_PASSWORD: test
       POSTGRES_USER: test

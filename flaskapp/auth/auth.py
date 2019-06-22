@@ -50,7 +50,8 @@ def signup_post():
         return redirect(url_for('auth.signup'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
-    new_user = User(email=email, name=name, password=bcrypt.generate_password_hash(password))
+    pwhash = bcrypt.generate_password_hash(password)
+    new_user = User(email=email, name=name, password=pwhash.decode('utf8'))
 
     # add the new user to the database
     db.session.add(new_user)
