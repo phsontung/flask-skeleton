@@ -6,8 +6,11 @@ env:
 python:
   - 3.6
 install:
+  - pip install codecov
   - pip install pipenv
   - pipenv install --dev --system
 before_script:
   - flake8
-script: pytest
+script:
+  - pytest
+  - codecov --token=608bcd22-6bb0-4255-b0e2-99c10d2bd5de
