@@ -13,4 +13,4 @@ before_script:
   - flake8
 script:
   - pytest
-  - codecov --token=608bcd22-6bb0-4255-b0e2-99c10d2bd5de
+  - codecov

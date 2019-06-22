@@ -6,7 +6,6 @@ from flask_login import login_user, logout_user
 from extensions import bcrypt
 from extensions import db
 
-
 from .models import User
 
 auth = Blueprint('auth', __name__)

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3d057864c72e59175e08deac19bc1a730317e5d9ba12df7d61609296621eeab4"
+            "sha256": "f81ce04acfb4ba04f0138e9e0867a6f01440153247234b8dbbf6d1939c7d1ae2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -247,6 +247,13 @@
             "index": "pypi",
             "version": "==1.3.5"
         },
+        "uwsgi": {
+            "hashes": [
+                "sha256:4972ac538800fb2d421027f49b4a1869b66048839507ccf0aa2fda792d99f583"
+            ],
+            "index": "pypi",
+            "version": "==2.0.18"
+        },
         "werkzeug": {
             "hashes": [
                 "sha256:865856ebb55c4dcd0630cdd8f3331a1847a819dda7e8c750d3db6f2aa6c0209c",
@@ -366,14 +373,6 @@
             "index": "pypi",
             "version": "==1.3.0"
         },
-        "flake8-isort": {
-            "hashes": [
-                "sha256:1e67b6b90a9b980ac3ff73782087752d406ce0a729ed928b92797f9fa188917e",
-                "sha256:81a8495eefed3f2f63f26cd2d766c7b1191e923a15b9106e6233724056572c68"
-            ],
-            "index": "pypi",
-            "version": "==2.7.0"
-        },
         "flake8-polyfill": {
             "hashes": [
                 "sha256:12be6a34ee3ab795b19ca73505e7b55826d5f6ad7230d31b18e106400169b9e9",
@@ -387,14 +386,6 @@
                 "sha256:cb6ee23b46173539939964df59d3d72c3e0c1b5d54b84f1d8a7e912fe43612db"
             ],
             "version": "==0.18"
-        },
-        "isort": {
-            "hashes": [
-                "sha256:c40744b6bc5162bbb39c1257fe298b7a393861d50978b565f3ccd9cb9de0182a",
-                "sha256:f57abacd059dc3bd666258d1efb0377510a89777fda3e3274e3c01f7c03ae22d"
-            ],
-            "index": "pypi",
-            "version": "==4.3.20"
         },
         "mccabe": {
             "hashes": [
@@ -518,13 +509,6 @@
                 "sha256:b20eff5e564529711544066d7dc0f7661df41232ae263619dede5059799cdfca"
             ],
             "version": "==1.9.1"
-        },
-        "testfixtures": {
-            "hashes": [
-                "sha256:665a298976c8d77f311b65c46f16b7cda7229a47dff5ad7c822e5b3371a439e2",
-                "sha256:9d230c5c80746f9f86a16a1f751a5cf5d8e317d4cc48243a19fb180d22303bce"
-            ],
-            "version": "==6.10.0"
         },
         "text-unidecode": {
             "hashes": [

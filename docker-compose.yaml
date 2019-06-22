@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  flaskapp:
+    build:
+      context: .
+      dockerfile: Application.Dockerfile
+    image: flaskapp:latest
+    command: "flask run"
+    volumes:
+      - ./:/app
+    env_file:
+      - deployment/docker/Application/env/dev.env
+    ports:
+      - 5000:5000
+
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - 1080:1080
+      - 1025
+
+  postgres:
+    image: postgres:10
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: test
+      TZ: UTC
+    ports:
+      - 5432:5432
+
+  redis:
+    image: bitnami/redis:latest
+    environment:
+      ALLOW_EMPTY_PASSWORD: "yes"
