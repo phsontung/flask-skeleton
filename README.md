@@ -1,4 +1,4 @@
-# flask-skeleton
+# WIP: flask-skeleton
 
 ## What's included?
 
