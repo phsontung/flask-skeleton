@@ -7,8 +7,7 @@ image: python:3.6-alpine
 
 before_script:
   - pip install pipenv==2018.11.26
-  - apk add --no-cache --virtual .build-deps  postgresql-libs gcc g++ musl-dev postgresql-dev jpeg-dev zlib-dev libffi-dev
-  - pipenv install --system --deploy
+  - pip install flake8
 
 validate_code:
   stage: code_quality
