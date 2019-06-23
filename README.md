@@ -8,6 +8,7 @@
 |Database migration|[Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)||
 |Authentication|[Flask-Login](https://flask-login.readthedocs.io/en/latest/)||
 |Flask WTFForm|https://flask-wtf.readthedocs.io/en/stable/||
+|Email|[Flask-Mail](https://pythonhosted.org/Flask-Mail/)||
 |Restful API|[Flask-Restful](https://flask-restful.readthedocs.io/en/latest/)||
 |Flask Caching|[Flask-caching](https://flask-caching.readthedocs.io/en/latest/)||
 |JWT Authentication|[PyJWT](https://pyjwt.readthedocs.io/en/latest/)||
@@ -49,3 +50,4 @@
 - Add code coverage: https://codecov.io
 - Add code climate: https://codeclimate.com
 - Pyup.io: https://pyup.io/
+- Reload flask app and install pip packages when running with docker-compose

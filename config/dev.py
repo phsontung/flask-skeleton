@@ -19,3 +19,12 @@ SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}:{}/{}'.format(
     DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME
 )
 # SQLALCHEMY_DATABASE_URI = 'sqlite:///db.sqlite'
+
+# Flask-Mail configuration
+MAIL_SERVER = "localhost"
+MAIL_PORT = 1025
+MAIL_USE_TLS = False
+MAIL_USE_SSL = False
+MAIL_USERNAME = None
+MAIL_PASSWORD = None
+MAIL_DEFAULT_SENDER = "test-mail@example.com"

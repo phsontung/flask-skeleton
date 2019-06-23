@@ -22,6 +22,7 @@ Flask-Caching = ">=1.0.0"
 environs = "==4.2.0"
 uwsgi = "*"
 psycopg2 = "*"
+flask-mail = "*"
 
 [dev-packages]
 # Testing

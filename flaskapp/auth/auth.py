@@ -2,9 +2,11 @@ from flask import (
     Blueprint, render_template, redirect, url_for, request, flash
 )
 from flask_login import login_user, logout_user
+from flask_mail import Message
 
 from extensions import bcrypt
 from extensions import db
+from extensions import mail
 
 from .models import User
 
@@ -13,7 +15,7 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
 def login():
-    return render_template('login.html')
+    return render_template('auth/login.html')
 
 @auth.route('/login', methods=['POST'])
 def login_post():
@@ -35,7 +37,7 @@ def login_post():
 
 @auth.route('/signup')
 def signup():
-    return render_template('signup.html')
+    return render_template('auth/signup.html')
 
 
 @auth.route('/signup', methods=['POST'])
@@ -58,6 +60,33 @@ def signup_post():
     db.session.commit()
 
     return redirect(url_for('auth.login'))
+
+
+@auth.route('/forgot-password')
+def forgot_password():
+    return render_template('auth/forgot.html')
+
+
+@auth.route('/forgot-password', methods=['POST'])
+def forgot_password_post():
+    email = request.form.get('email')
+    if not email:
+        flash('Please input your email address.')
+    else:
+        user = User.query.filter_by(email=email).first()
+        if not user:  # if a user is found, ask user try to sign up again
+            flash('Please input correct email address.')
+            return redirect(url_for('auth.forgot_password'))
+
+        html_body = render_template('email/reset_password.html',
+                                    username=user.name, reset_url='https://github.com/phsontung/flask-skeleton')
+        msg = Message(subject='Reset your password',
+                      sender='from@example.com',
+                      html=html_body,
+                      recipients=[email])
+        mail.send(msg)
+        flash('Email sent. Please check your email.')
+    return redirect(url_for('auth.forgot_password'))  # Reload page
 
 
 @auth.route('/logout')

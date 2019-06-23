@@ -36,6 +36,10 @@ def init_extensions(app):
     login_mgr.login_view = 'auth.login'
     login_mgr.init_app(app)
 
+    # Init mail
+    from extensions import mail
+    mail.init_app(app)
+
 
 def init_blueprint(app):
     # Import base blueprint
