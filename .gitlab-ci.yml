@@ -1,0 +1,15 @@
+stages:
+  - code_quality
+  - test
+  - deploy
+  
+image: python:3.6-alpine
+
+before_script:
+  - pip install pipenv==2018.11.26
+  - pip install flake8
+
+validate_code:
+  stage: code_quality
+  script:
+    - flake8
