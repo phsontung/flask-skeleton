@@ -31,6 +31,74 @@
 
 - Celery was used for sending email in async fashion
 
+## Let's get start
+- Clone source code
+```bash
+git clone https://gitlab.com/mekongsmartcam/engine/flask-skeleton
+```
+
+### Work with docker-compose
+- Build flaskapp
+```
+docker-compose build flaskapp
+```
+- Run flask application
+```
+docker-compose up
+```
+
+### Run flaskapp in local virtual environment
+- Install pipenv for working with Pipfile and virtualenv
+```
+pip install pipenv
+```
+
+- Change directory to flask-skeleton and install dependencies
+```
+pipenv install --dev
+```
+
+- Create `.env` file (flask environment variables)
+```
+# Flask built-in environment variables
+FLASK_ENV=development
+SERVER_NAME=0.0.0.0
+FLASK_APP=app.py
+FLASK_DEBUG=1
+
+# User define environmnet variables
+FLASK_APP_ENV=dev
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_USERNAME=test
+DATABASE_PASSWORD=test
+DATABASE_NAME=test
+```
+
+- Activate virtualenv
+```
+pipenv shell
+```
+
+- Run flask application
+```
+# flash run
+
+ * Serving Flask app "app.py" (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 206-413-235
+```
+
+- Note: In case you run with postgresql, you can use docker-compose to run postgresql only (+ mailcatcher if need)
+```
+docker-compose up postgres mailcatcher
+```
+
+
 ## References
 
 - [Structure of Flask application](https://lepture.com/en/2018/structure-of-a-flask-project)
