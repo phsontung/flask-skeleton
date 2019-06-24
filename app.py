@@ -2,6 +2,17 @@ import os
 
 from flask import Flask
 
+import sentry_sdk
+from sentry_sdk.integrations.flask import FlaskIntegration
+
+
+# Sentry integration with flask app
+if os.environ.get('SENTRY_DSN'):
+    sentry_sdk.init(
+        dsn=os.environ.get('SENTRY_DSN'),
+        integrations=[FlaskIntegration()]
+    )
+
 
 def create_app():
     app = Flask(__name__)

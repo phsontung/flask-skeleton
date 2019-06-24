@@ -34,7 +34,7 @@
 ## Let's get start
 - Clone source code
 ```bash
-git clone https://github.com/phsontung/flask-skeleton
+git clone https://gitlab.com/mekongsmartcam/engine/flask-skeleton
 ```
 
 ### Work with docker-compose
