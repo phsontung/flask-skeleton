@@ -61,9 +61,10 @@ pipenv install --dev
 - Create `.env` file (flask environment variables)
 ```
 # Flask built-in environment variables
+# Flask built-in environment variables
 FLASK_ENV=development
 SERVER_NAME=0.0.0.0
-FLASK_APP=app.py
+FLASK_APP=run.py
 FLASK_DEBUG=1
 
 # User define environmnet variables
@@ -73,6 +74,9 @@ DATABASE_PORT=5432
 DATABASE_USERNAME=test
 DATABASE_PASSWORD=test
 DATABASE_NAME=test
+
+# Sentry DSN (should not set in local development)
+SENTRY_DSN=https://f8066db528df41cd92170dc04fcb1f55@sentry.io/1488966
 ```
 
 - Activate virtualenv

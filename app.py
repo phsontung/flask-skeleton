@@ -5,6 +5,8 @@ from flask import Flask
 import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
 
+from instance.config import app_config
+
 
 # Sentry integration with flask app
 if os.environ.get('SENTRY_DSN'):
@@ -14,11 +16,9 @@ if os.environ.get('SENTRY_DSN'):
     )
 
 
-def create_app():
+def create_app(config_name):
     app = Flask(__name__)
-
-    config = os.environ.get('FLASK_APP_ENV')
-    app.config.from_object('config.{}'.format(config))
+    app.config.from_object(app_config[config_name])
 
     # Init all extensions
     init_extensions(app)
