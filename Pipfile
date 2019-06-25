@@ -24,6 +24,8 @@ uwsgi = "*"
 psycopg2 = "*"
 flask-mail = "*"
 sentry-sdk = {extras = ["flask"],version = "==0.9.1"}
+flask-jwt-extended = "*"
+flask-restful = "*"
 
 [dev-packages]
 # Testing

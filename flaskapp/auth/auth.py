@@ -1,6 +1,7 @@
 from flask import (
-    Blueprint, render_template, redirect, url_for, request, flash
+    Blueprint, render_template, redirect, url_for, request, flash, jsonify
 )
+from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 from flask_login import login_user, logout_user
 from flask_mail import Message
 
@@ -93,3 +94,28 @@ def forgot_password_post():
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
+
+
+# Support another way (JWT) to call APIs to system
+@auth.route('/jwt_create', methods=['POST'])
+def jwt_create():
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    user = User.query.filter_by(email=email).first()
+
+    # Validate credentials
+    if not user or not bcrypt.check_password_hash(user.password, password):
+        return jsonify({'message': 'Invalid username or password'}), 400
+    else:
+        jwt_token = create_access_token(identity=user.id)
+        return jsonify(token=jwt_token), 200
+
+
+@auth.route('/jwt_protected', methods=['GET'])
+@jwt_required
+def partially_protected():
+    # If no JWT is sent in with the request, get_jwt_identity()
+    # will return None
+    current_user = get_jwt_identity()
+    return jsonify(id=current_user), 200

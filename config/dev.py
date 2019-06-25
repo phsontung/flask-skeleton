@@ -28,3 +28,8 @@ MAIL_USE_SSL = False
 MAIL_USERNAME = None
 MAIL_PASSWORD = None
 MAIL_DEFAULT_SENDER = "test-mail@example.com"
+
+# JWT Variables
+JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY') or 'super-secret'
+JWT_IDENTITY_CLAIM = 'sub'
+JWT_ACCESS_TOKEN_EXPIRES = os.environ.get('JWT_ACCESS_TOKEN_EXPIRES') or 86400  # 24 hours

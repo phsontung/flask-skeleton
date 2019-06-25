@@ -51,6 +51,10 @@ def init_extensions(app):
     from extensions import mail
     mail.init_app(app)
 
+    # Init jwt
+    from extensions import jwt
+    jwt.init_app(app)
+
 
 def init_blueprint(app):
     # Import base blueprint
